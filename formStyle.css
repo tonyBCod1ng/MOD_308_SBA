@@ -1,0 +1,25 @@
+/*form styles*/
+body{
+    height: 100vh;
+    background-image: radial-gradient(white, blueviolet);
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+fieldset {
+    border: 5px solid blueviolet;
+    display: flex;
+    flex-direction: column;
+    background-color: blueviolet;
+}
+form {
+    color: chartreuse;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    letter-spacing: 1px;
+}
+form div {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: center;
+}

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body style="font-family:'Cabin Sketch';background-size: cover; background-image:url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.etsystatic.com%2F13652661%2Fr%2Fil%2F3102fe%2F2249707912%2Fil_fullxfull.2249707912_44rx.jpg&f=1&nofb=1&ipt=c9e1b16803f5cf81509e1940930092fbabc7032829e351a18be1fe0bb0a24f6e&ipo=images')">
+<div class="container">
+    <div class="btn" onclick="window.location.assign('home.html')">⏮️</div>
+    <div class="row text-center" style="height: 10vh">
+        <h1 style="font-size: 30pt" class="col col-12">Let's Play Dice!</h1>
+    </div>
+    <div class="row text-center" style="height: 10vh">
+        <div style="font-size: 40pt" class="col col-12" id="value-display"></div>
+    </div>
+    <div class="row text-center" style="height: 40vh">
+        <div class="col col-3"></div>
+        <div class="col col-3" style="font-size: 120pt; box-shadow: #34495e"><img id="di-1"
+                src="Dice1.png" class="dice-mat img-fluid"
+                alt="Dice 1"></div>
+        <div class="col col-3" style="font-size: 120pt; "><img id="di-2"
+                src="Dice1.png" class="dice-mat img-fluid"
+                alt="Dice 2"></div>
+        <div class="col col-3"></div>
+    </div>
+    <div class="p-3 row text-center cols-3 col-12">
+        <div class="col col-3"></div>
+        <div class=" col col-6">
+            <button onclick="shakeBones()">Shake</button>
+            <button onclick="shakin? stopRoll() : remindToShake()">Toss</button>
+        </div>
+        <div class="col col-3"></div>
+    </div>
+    <div class="row text-center" style="height: 30vh">
+        <h3 class="col col-12">RULES OF CRAPS</h3>
+        <h4 class="col col-12">The Come-Out Roll</h4>
+        <p class="col col-12">
+            The initial roll of the dice is the come-out roll. If you roll a 7 or 11, you win!
+            if you roll a 2 (snake-eyes), 3, or 12, you lose. Any other number becomes the "point."
+        </p>
+        <h4 class="col col-12">Establishing The Point</h4>
+        <p class="col col-12">
+            If you haven't won or lost on the come-out roll, the rolled number becomes the point.
+            The you continue rolling until you roll the point number again or roll a 7, at which point you lose.
+        </p>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+<script src="craps.js"></script>
+</body>
+</html>

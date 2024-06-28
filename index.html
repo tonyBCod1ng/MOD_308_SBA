@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title>Forms</title>
+</head>
+
+<script>
+    function onSubmit () {
+        validateName();
+        validateEmail();
+        const issues = document.querySelectorAll(".is-invalid");
+        if (issues.length === 0){
+            return true;
+        } else {
+            return false;
+        }
+    }
+    function validateEmail(){
+        let email = document.getElementById("exampleInputEmail1");
+        let name = document.getElementById("firstName");
+        let emailHelp = document.getElementById("emailHelp");
+        let emailValue = email.value;
+        const emailRegex = /^[\w\-\.]+@([\w-]+\.)+[\w-]{2,}$/gm;
+        const isValid = emailRegex.test(emailValue);
+        console.log(emailValue);
+        if(!isValid){
+            emailHelp.innerHTML = `Try again, ya donut! <img style="width: 40px" src='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fblog.joypixels.com%2Fcontent%2Fimages%2F2019%2F12%2Fthumbs_down.gif&f=1&nofb=1&ipt=12b75481775a95e00888c1b7e770de734b30d35e7f0c700f54b0a28c43411dbf&ipo=images'>`;
+            email.classList.remove("is-valid");
+            email.classList.add("is-invalid");
+            emailHelp.classList.remove("valid-feedback");
+            emailHelp.classList.add("invalid-feedback");
+        }
+
+        else if(isValid) {
+            emailHelp.innerHTML = `Looks Great! <img style="width: 53px" src='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.dribbble.com%2Fusers%2F285475%2Fscreenshots%2F2310943%2Fthumbs-up.gif&f=1&nofb=1&ipt=222da283d26748810818c0bf935606035f9add8474ba8dbd9364928e13eadede&ipo=images'>`;
+            email.classList.remove("is-invalid");
+            email.classList.add("is-valid");
+            emailHelp.classList.remove("invalid-feedback")
+            emailHelp.classList.add("valid-feedback")
+        }
+    }
+    function validateName(){
+        let name = document.getElementById("firstName");
+        let nameHelp = document.getElementById("firstNameHelp");
+        let nameValue = name.value;
+        const nameRegex = /^[a-zA-Z]+$/gm;
+        const isValid = nameRegex.test(nameValue);
+        if(!isValid){
+            nameHelp.innerHTML = `Wrong Format! <img style="width: 40px" src='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fblog.joypixels.com%2Fcontent%2Fimages%2F2019%2F12%2Fthumbs_down.gif&f=1&nofb=1&ipt=12b75481775a95e00888c1b7e770de734b30d35e7f0c700f54b0a28c43411dbf&ipo=images'>`;
+            name.classList.remove("is-valid");
+            name.classList.add("is-invalid");
+            nameHelp.classList.remove("valid-feedback");
+            nameHelp.classList.add("invalid-feedback");
+        }
+
+        else if(isValid) {
+            nameHelp.innerHTML = `Looks Great! <img style="width: 53px" src='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.dribbble.com%2Fusers%2F285475%2Fscreenshots%2F2310943%2Fthumbs-up.gif&f=1&nofb=1&ipt=222da283d26748810818c0bf935606035f9add8474ba8dbd9364928e13eadede&ipo=images'>`;
+            name.classList.remove("is-invalid");
+            name.classList.add("is-valid");
+            nameHelp.classList.remove("invalid-feedback")
+            nameHelp.classList.add("valid-feedback")
+        }
+    }
+</script>
+<body style="font-family: 'Cabin Sketch'">
+
+<section>
+    <div class="container">
+        <form action="home.html" onsubmit=" return onSubmit()">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input onchange="validateEmail()" name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+                <label for="firstName" class="form-label">First Name</label>
+                <input onchange="validateName()" name="firstName" pattern="^[A-Za-z]+$" type="text" class="form-control" id="firstName" aria-describedby="firstNameHelp">
+                <div id="firstNameHelp" class="form-text">Please enter your first name here.</div>
+            </div>
+            <div class="mb-3">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input name="lastName" type="text" class="form-control" id="lastName" aria-describedby="lastNameHelp">
+                <div id="lastNameHelp" class="form-text">Please enter your last name here.</div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</section>
+</body>
+<!--<script src="classExamplesDay4.js"></script>-->
+</html>
